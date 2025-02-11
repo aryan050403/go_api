@@ -17,6 +17,10 @@ func (p *people) printInfo() {
 	fmt.Println("Phone Number:", p.phNo)
 	fmt.Println("Address:", p.address)
 }
+func (p *people) updatePhno(updatedPhno int) people {
+	p.phNo = updatedPhno
+	return *p
+}
 func main() {
 	p := people{
 		name:    "ArShar",
@@ -24,5 +28,7 @@ func main() {
 		address: "JK06",
 	}
 	p.updateName("Ryan")
+	p.printInfo()
+	p.updatePhno(566456456)
 	p.printInfo()
 }
